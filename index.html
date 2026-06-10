@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="통합사회 I-3. 인간 중심주의와 생태 중심주의 인터랙티브 학습 대시보드">
+  <title>🌿 인간과 자연의 관계를 바라보는 두 가지 시선</title>
+  
+  <!-- Pretendard 및 Google Fonts Outfit, Nanum Pen Script 불러오기 -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="mode-student theme-intro">
+
+  <div class="container">
+    <!-- 상단 대형 타이틀 배너 -->
+    <header class="title-banner">
+      <span class="badge-topic">통합사회 I-3</span>
+      <h1>인간과 자연의 관계를 바라보는 두 가지 시선</h1>
+      <p>빈칸을 채우며 서로 다른 철학적 패러다임을 이해해봅시다.</p>
+    </header>
+
+    <!-- 컨트롤바 (탭 메뉴 및 유틸리티 설정) -->
+    <div class="control-bar">
+      <div class="control-row">
+        <!-- 1차 대주제 전환 탭 -->
+        <nav class="topic-tabs">
+          <button class="topic-btn active" data-tab="intro">
+            <span>🏁</span> 단원 도입
+          </button>
+          <button class="topic-btn" data-tab="human">
+            <span>👤</span> 인간 중심주의
+          </button>
+          <button class="topic-btn" data-tab="eco">
+            <span>🌲</span> 생태 중심주의
+          </button>
+          <button class="topic-btn" data-tab="compare">
+            <span>📊</span> 종합 비교표
+          </button>
+          <button class="topic-btn" data-tab="relation">
+            <span>🤝</span> 바람직한 관계
+          </button>
+          <button class="topic-btn" data-tab="essay">
+            <span>✍️</span> 나의 생각 정리
+          </button>
+          <button class="topic-btn" data-tab="quiz">
+            <span>📝</span> 실전 문제
+          </button>
+        </nav>
+
+        <!-- 학습 설정 및 모드 토글 -->
+        <div class="settings-group">
+          <!-- 진척도 표시 -->
+          <div class="progress-container">
+            <span class="progress-text-label">활동지 완성도</span>
+            <div class="progress-bar-bg">
+              <div id="progressBarFill" class="progress-bar-fill"></div>
+            </div>
+            <span id="progressText" class="progress-text">0%</span>
+          </div>
+
+          <!-- 모드 전환 스위치 -->
+          <div class="mode-switch">
+            <span class="mode-label label-student active">학생용 워크북</span>
+            <label class="switch">
+              <input type="checkbox" id="modeToggle">
+              <span class="slider"></span>
+            </label>
+            <span class="mode-label label-teacher">모범답안</span>
+          </div>
+
+          <!-- 인쇄 및 초기화 액션 -->
+          <button id="printBtn" class="btn-action" title="학습지 인쇄 (A4)">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+            인쇄
+          </button>
+          <button id="resetBtn" class="btn-action" title="학습 진척도 초기화">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            초기화
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 대시보드 콘텐츠 영역 -->
+    <main class="content-wrapper">
+      
+      <!-- ====================================================================
+           [Tab 1: 단원 도입 (Intro Section)]
+           ==================================================================== -->
+      <section class="lesson-section active" id="tab-intro">
+        <div class="section-slogan">
+          <h2 class="slogan-title">인간과 자연은 어떤 관계를 맺어야 할까?</h2>
+          <p class="slogan-desc">지구 환경 위기 속에서 자연을 바라보는 인류의 두 가지 핵심적 패러다임을 대시보드를 통해 완성해봅시다.</p>
+        </div>
+        
+        <div class="intro-dashboard">
+          <div class="intro-guide-card">
+            <h3>📖 학습 안내 및 활동 방법</h3>
+            <ul class="guide-list">
+              <li><strong>1단계 (개념 탐구):</strong> 상단의 탭 메뉴를 자유롭게 이동하며 <strong>인간 중심주의</strong>와 <strong>생태 중심주의</strong> 두 핵심 철학의 정의, 세계관, 그리고 사상가별 관점을 학습합니다.</li>
+              <li><strong>2단계 (빈칸 매칭):</strong> 교재 본문의 중요 단어 빈칸을 하단의 <strong>단어 바구니</strong> 칩을 활용해 채워나갑니다. 알맞은 단어 칩을 클릭한 후 빈칸에 넣으면 정답 여부가 확인됩니다.</li>
+              <li><strong>3단계 (종합 정리):</strong> '종합 비교표'에서 두 주의를 한눈에 대조 학습한 뒤, '나의 생각 정리' 탭에서 서술형 보고서 미션을 수행하고 배움 자가 진단 리스트를 점검합니다.</li>
+              <li><strong>💡 사상가 입체 학습:</strong> 베이컨, 데카르트, 칸트, 레오폴드, 네스 등 본문에 등장하는 사상가들의 초상화 아바타를 클릭하면 상세 저서와 핵심 인용문을 팝업창으로 더 깊게 탐색할 수 있습니다.</li>
+            </ul>
+            
+            <div class="intro-banner-box">
+              <span class="banner-icon">✏️</span>
+              <p>학습 대시보드 탭을 차례로 탐색하며 다양한 인터랙티브 요소와 함께 인간과 자연의 관계에 대한 지혜를 내 것으로 만들어 보세요!</p>
+            </div>
+          </div>
+          
+          <div class="intro-visual-card">
+            <div class="visual-split">
+              <div class="split-side split-human">
+                <span class="split-icon">🏙️</span>
+                <h4>인간 중심주의 (Anthropocentrism)</h4>
+                <p>인간을 세계의 유일한 주체이자 가장 존엄한 존재로 규정합니다. 자연은 오직 인간의 풍요, 편의, 안전을 충족하기 위한 물질적 수단 및 개발의 대상이자 도구로서의 가치를 지닌다고 봅니다.</p>
+              </div>
+              <div class="split-side split-eco">
+                <span class="split-icon">🌲</span>
+                <h4>생태 중심주의 (Ecocentrism)</h4>
+                <p>생태계 전체를 하나로 묶는 전일론적이고 유기적인 세계관에 기초합니다. 인간을 포함한 동물, 식물, 흙, 강 등 생태계의 모든 구성원들이 상호 연대하며 그 자체로 내재적 가치를 지닌다고 파악합니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           [Tab 2: 인간 중심주의 대시보드 (Anthropocentrism Section)]
+           ==================================================================== -->
+      <section class="lesson-section" id="tab-human">
+        <!-- 인쇄용 학적 헤더 -->
+        <div class="print-header">
+          <span class="print-header-title">🌿 통합사회 I-3. 인간 중심주의 활동지</span>
+          <span class="print-student-info">학년: ____ 반: ____ 번호: ____ 이름: _________</span>
+        </div>
+
+        <div class="section-slogan">
+          <h2 class="slogan-title">👤 인간 중심주의: 인간의 가치 최우선과 자연 지배관</h2>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- 1. 정의와 세계관 -->
+          <div class="dashboard-card card-half">
+            <h3 class="block-title">정의와 세계관 <span class="badge">개념</span></h3>
+            <div class="card-content-stack">
+              <div class="definition-item">
+                <strong class="item-label">정의</strong>
+                <p class="item-text">인간과 자연의 관계에서 인간을 가장 가치 있는 존재로 여기고, 인간의 <span class="blank" data-answer="이익" data-id="h-b1" data-hint="인간이 얻는 물질적·정신적 혜택"></span>이나 행복을 최우선으로 고려하는 관점.</p>
+              </div>
+              <div class="definition-item">
+                <strong class="item-label">세계관</strong>
+                <p class="item-text">인간을 자연으로부터 독립되고 우월한 존재로 파악하는 <span class="blank" data-answer="이분법적" data-id="h-b2" data-hint="인간과 자연을 별개로 나누어 대립시키는"></span> 세계관을 바탕으로 함.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. 인간 중심주의 성과와 한계 -->
+          <div class="dashboard-card card-half">
+            <h3 class="block-title">성과와 한계 <span class="badge danger">결과</span></h3>
+            <div class="card-content-stack">
+              <div class="definition-item contrast-success">
+                <strong class="item-label">성과</strong>
+                <p class="item-text">무분별한 자연 개발을 통해 풍요로운 <span class="blank" data-answer="물질" data-id="h-b3" data-hint="눈에 보이는 재화나 물리적인 풍요"></span> 문명을 건설하고 인간의 삶의 질을 비약적으로 향상시킴.</p>
+              </div>
+              <div class="definition-item contrast-failure">
+                <strong class="item-label">한계</strong>
+                <p class="item-text">지나친 착취로 인해 자원 고갈, 생태계 파괴, 그리고 21세기 인류를 위협하는 <span class="blank" data-answer="생태적" data-id="h-b4" data-hint="기후변화나 온난화 등 자연 전체에 다가온"></span> 위기를 초래함.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 3대 핵심 특징 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">인간 중심주의의 3대 핵심 특징 <span class="badge">특징</span></h3>
+            <div class="cards-sub-row">
+              <div class="challenge-subcard">
+                <span class="subcard-num">01</span>
+                <h4>[ <span class="blank" data-answer="도구적" data-id="h-b5" data-hint="자연이 그 자체로 존귀한 게 아니라 인간을 위한 수단임을 뜻하는"></span> 가치 ]</h4>
+                <p>자연은 그 자체로 가치 있는 것이 아니라, 인간의 생존과 복지를 위한 수단에 불과하다고 봄.</p>
+              </div>
+              <div class="challenge-subcard">
+                <span class="subcard-num">02</span>
+                <h4>도덕적 고려의 제한</h4>
+                <p>도덕적 고려의 대상을 오직 '<span class="blank" data-answer="인간" data-id="h-b6" data-hint="이성을 지니고 도덕적 판단이 가능한 존재"></span>'으로 한정함.</p>
+              </div>
+              <div class="challenge-subcard">
+                <span class="subcard-num">03</span>
+                <h4>자연 지배관</h4>
+                <p>자연을 정복과 개발의 대상으로 파악하여 <span class="blank" data-answer="과학" data-id="h-b7" data-hint="자연 법칙을 밝혀 인간 편의를 향상시키는 학문"></span> 기술 발전을 통한 물질적 풍요를 지향함.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. 대표적 철학자 매칭 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">근대 사상가들의 시선 <span class="badge warning">인물 매칭</span> <span style="font-size:0.85rem; font-weight:normal; margin-left:auto; color:var(--text-muted);">💡 사진 클릭 시 상세 내용이 열립니다.</span></h3>
+            <div class="philosopher-flex">
+              <div class="p-flex-item">
+                <div class="p-avatar-wrapper clickable-thinker" data-thinker="bacon" title="베이컨 학습 카드 보기">
+                  <img src="images/bacon.png" alt="베이컨" class="p-avatar-img">
+                  <span class="p-avatar-name">베이컨</span>
+                </div>
+                <div class="p-bubble">"아는 것이 힘이다." 자연을 인류 복지를 위한 <span class="blank" data-answer="이용" data-id="h-b8" data-hint="자연을 정복하여 쓸모있게 만드는 일"></span> 및 정복 대상으로 파악함.</div>
+              </div>
+              <div class="p-flex-item">
+                <div class="p-avatar-wrapper clickable-thinker" data-thinker="descartes" title="데카르트 학습 카드 보기">
+                  <img src="images/descartes.png" alt="데카르트" class="p-avatar-img">
+                  <span class="p-avatar-name">데카르트</span>
+                </div>
+                <div class="p-bubble">정신을 가진 인간(주체)과 영혼이 없는 기계인 자연(대상)을 엄격히 구분하는 <span class="blank" data-answer="기계론적" data-id="h-b9" data-hint="자연을 스스로의 의지가 없는 시계태엽 부품처럼 보는"></span> 자연관을 주장함.</div>
+              </div>
+              <div class="p-flex-item">
+                <div class="p-avatar-wrapper clickable-thinker" data-thinker="kant" title="칸트 학습 카드 보기">
+                  <img src="images/kant.png" alt="칸트" class="p-avatar-img">
+                  <span class="p-avatar-name">칸트</span>
+                </div>
+                <div class="p-bubble">오직 <span class="blank" data-answer="이성적" data-id="h-b10" data-hint="스스로 생각하고 자율적 결정을 내릴 수 있는"></span> 존재인 인간만이 목적 그 자체이며, 동물은 수단에 불과하여 간접적인 의무만 가짐.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 관련 뉴스 탐구 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">📰 관련 뉴스 탐구</h3>
+            <div class="concept-desc-box" style="background: rgba(255, 255, 255, 0.65); border-left: 5px solid var(--accent); padding: 1.2rem;">
+              <h4 style="font-weight: 800; font-size: 1.1rem; margin-bottom: 0.6rem;">
+                <a href="https://www.nongmin.com/article/20250730500427" target="_blank" class="news-link">
+                  [이슈 논쟁] ‘돼지 빌딩’ 도입 논란 🔗
+                </a>
+              </h4>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin: 0;">
+                중국의 초대형 다층식 양돈시설(일명 '돼지 빌딩') 도입을 둘러싸고, 공간 효율성과 농가 인력 부족 해소, 식량 주권 확보 등 <strong>인간 중심적 효율성 및 농업 경쟁력</strong>을 앞세운 찬성 입장과 동물 복지 저하, 밀집 사육으로 인한 전염병 및 환경오염 피해를 우려하는 생태적 반대 입장이 갈등을 빚고 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 단어 바구니 -->
+        <div class="word-bank-wrapper">
+          <span class="bank-title">🏷️ 단어 바구니</span>
+          <div class="word-chips" data-tab="human"></div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           [Tab 3: 생태 중심주의 대시보드 (Ecocentrism Section)]
+           ==================================================================== -->
+      <section class="lesson-section" id="tab-eco">
+        <!-- 인쇄용 학적 헤더 -->
+        <div class="print-header">
+          <span class="print-header-title">🌿 통합사회 I-3. 생태 중심주의 활동지</span>
+          <span class="print-student-info">학년: ____ 반: ____ 번호: ____ 이름: _________</span>
+        </div>
+
+        <div class="section-slogan">
+          <h2 class="slogan-title">🌲 생태 중심주의: 전일론적 세계관과 생태계 전체 배려</h2>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- 1. 정의와 세계관 -->
+          <div class="dashboard-card card-half">
+            <h3 class="block-title">정의와 세계관 <span class="badge eco">개념</span></h3>
+            <div class="card-content-stack">
+              <div class="definition-item">
+                <strong class="item-label">세계관</strong>
+                <p class="item-text">인간을 포함한 자연 전체를 하나로 보며, 모든 구성원이 유기적으로 연결되어 있다는 <span class="blank" data-answer="전일론적" data-id="e-b1" data-hint="전체가 부분의 합보다 크며 긴밀히 연결됨"></span> 관점을 강조함.</p>
+              </div>
+              <div class="definition-item">
+                <strong class="item-label">가치 평가</strong>
+                <p class="item-text">자연은 인간의 이익과 무관하게 그 자체로 가치를 지닌다는 <span class="blank" data-answer="내재적" data-id="e-b2" data-hint="사물 자체가 지닌 본연의 고유한 가치"></span> 가치를 인정함.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. 의의와 한계 -->
+          <div class="dashboard-card card-half">
+            <h3 class="block-title">의의와 한계 <span class="badge danger">결과</span></h3>
+            <div class="card-content-stack">
+              <div class="definition-item contrast-success">
+                <strong class="item-label">의의</strong>
+                <p class="item-text">상호 의존성에 기초한 생태계 전체 관심을 강조하고, 인간의 생태계 <span class="blank" data-answer="보존" data-id="e-b9" data-hint="자연환경이 파괴되지 않게 고스란히 보호하고 유지함"></span> 의무를 각성시켜 환경 위기 극복에 기여함.</p>
+              </div>
+              <div class="definition-item contrast-failure">
+                <strong class="item-label">한계</strong>
+                <p class="item-text">모든 개발의 중단 요구 등 비현실적인 주장이 되거나, 전체를 위해 개별 생명을 희생하는 <span class="blank" data-answer="환경 파시즘" data-id="e-b10" data-hint="생태계 전체의 선을 위해 인간을 포함한 개별 생명체를 희생시킬 수 있다는 우려"></span>의 위험이 있음.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 생태 사상가 탐구 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">생태 사상가 탐구 및 원전 <span class="badge eco">심화</span> <span style="font-size:0.85rem; font-weight:normal; margin-left:auto; color:var(--text-muted);">💡 사진 클릭 시 상세 내용이 열립니다.</span></h3>
+            <div class="philosopher-grid">
+              <div class="p-flex-item">
+                <div class="p-avatar-wrapper clickable-thinker" data-thinker="leopold" title="레오폴드 학습 카드 보기">
+                  <img src="images/leopold.png" alt="레오폴드" class="p-avatar-img">
+                  <span class="p-avatar-name">레오폴드 (A. Leopold)</span>
+                </div>
+                <div class="p-bubble">
+                  <span class="quote">『모래군의 열두 달』 (대지 윤리)</span>
+                  "어떤 행위가 생명 공동체의 온전성, 안정성, 그리고 <span class="blank" data-answer="아름다움" data-id="e-b3" data-hint="대지 공동체의 조화와 미학을 일컫는"></span>의 보존에 기여한다면 옳다. 인간은 <span class="blank" data-answer="대지" data-id="e-b4" data-hint="흙, 물, 식물, 동물 전체가 이루는 생명 공동체"></span> 공동체의 정복자가 아닌 평범한 구성원이다."
+                </div>
+              </div>
+              
+              <div class="p-flex-item">
+                <div class="p-avatar-wrapper clickable-thinker" data-thinker="naess" title="네스 학습 카드 보기">
+                  <img src="images/naess.png" alt="아르네 네스" class="p-avatar-img">
+                  <span class="p-avatar-name">아르네 네스 (A. Naess)</span>
+                </div>
+                <div class="p-bubble">
+                  <span class="quote">『생태, 공동체 그리고 생활양식』 (심층 생태주의)</span>
+                  "인간 중심 사고를 벗어나 자아를 대자연과 일치시켜야 한다. 생태계의 모든 생명권을 존중하는 <span class="blank" data-answer="심층" data-id="e-b5" data-hint="환경 문제의 근본 원인을 파헤쳐 우리의 생활 양식을 고치는"></span> 생태주의로의 근본적 전환을 촉구한다."
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. 3대 핵심 특징 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">생태 중심주의의 3대 핵심 특징 <span class="badge eco">특징</span></h3>
+            <div class="cards-sub-row">
+              <div class="challenge-subcard eco-style">
+                <span class="subcard-num">01</span>
+                <h4>도덕적 범위의 확장</h4>
+                <p>인간뿐만 아니라 동물, 식물, 나아가 무생물을 포함한 <span class="blank" data-answer="생태계" data-id="e-b6" data-hint="생물 공동체와 무생물 환경이 이루는 전체 환경"></span> 전체를 도덕적 고려 대상으로 삼음.</p>
+              </div>
+              <div class="challenge-subcard eco-style">
+                <span class="subcard-num">02</span>
+                <h4>상호 의존성</h4>
+                <p>인간은 대지의 정복자가 아니라 생명 공동체의 평범한 <span class="blank" data-answer="구성원" data-id="e-b7" data-hint="정복자가 아닌 동등한 지위를 지닌 생명 공동체의 일원"></span>이자 협력자임.</p>
+              </div>
+              <div class="challenge-subcard eco-style">
+                <span class="subcard-num">03</span>
+                <h4>심층적 실천</h4>
+                <p>단순한 오염 방지를 넘어 인간의 <span class="blank" data-answer="가치관" data-id="e-b8" data-hint="환경오염 예방을 넘어 인간관과 사고 방식 자체를 바꾸는"></span>과 생활 양식 자체를 생태 중심으로 근본적으로 전환하고자 함.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 관련 뉴스 탐구 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">📰 관련 뉴스 탐구</h3>
+            <div class="concept-desc-box" style="background: rgba(255, 255, 255, 0.65); border-left: 5px solid var(--accent); padding: 1.2rem;">
+              <h4 style="font-weight: 800; font-size: 1.1rem; margin-bottom: 0.6rem;">
+                <a href="https://news.lghellovision.net/news/articleView.html?idxno=464820" target="_blank" class="news-link">
+                  "지리산 파괴하는 산악열차·케이블카 반대" 중단 촉구 🔗
+                </a>
+              </h4>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin: 0;">
+                지리산 산악열차 및 케이블카 개발 사업으로 인한 서식지 분절, 산림 훼손 등 <strong>생태계 전체의 온전성과 생물 다양성 파괴</strong>를 우려한 시민·환경단체들의 개발 중단 촉구 사례입니다. 자연의 본원적 가치와 생명 연대의 안정성을 중시하는 <strong>생태 중심주의적 보전 입장</strong>이 뚜렷하게 투영된 현실적 갈등 사안입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 단어 바구니 -->
+        <div class="word-bank-wrapper">
+          <span class="bank-title">🏷️ 단어 바구니</span>
+          <div class="word-chips" data-tab="eco"></div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           [Tab 4: 종합 비교표 대시보드 (Comparison Section)]
+           ==================================================================== -->
+      <section class="lesson-section" id="tab-compare">
+        <!-- 인쇄용 학적 헤더 -->
+        <div class="print-header">
+          <span class="print-header-title">🌿 통합사회 I-3. 자연관 종합 비교 활동지</span>
+          <span class="print-student-info">학년: ____ 반: ____ 번호: ____ 이름: _________</span>
+        </div>
+
+        <div class="section-slogan">
+          <h2 class="slogan-title">📊 스스로 완성하는 두 관점 종합 비교표</h2>
+        </div>
+
+        <div class="dashboard-card card-full">
+          <div class="table-container">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th style="width: 20%;">구분</th>
+                  <th style="width: 40%;" class="th-human">인간 중심주의</th>
+                  <th style="width: 40%;" class="th-eco">생태 중심주의</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="td-label">세계관</td>
+                  <td>
+                    <span class="blank" data-answer="이분법적" data-id="c-b1" data-hint="인간과 자연을 대립되는 둘로 나누는"></span> 세계관
+                  </td>
+                  <td class="td-preset">전일론적 세계관</td>
+                </tr>
+                <tr>
+                  <td class="td-label">가치 평가</td>
+                  <td class="td-preset">도구적 가치</td>
+                  <td>
+                    <span class="blank" data-answer="내재적" data-id="c-b2" data-hint="자연이 그 자체로 가진 고유한 가치"></span> 가치
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-label">도덕적 고려 범위</td>
+                  <td>
+                    <span class="blank" data-answer="인간" data-id="c-b3" data-hint="인간 중심의 제한적 도덕 범위"></span> 한정
+                  </td>
+                  <td class="td-preset">생태계 전체</td>
+                </tr>
+                <tr>
+                  <td class="td-label">대표 사상가</td>
+                  <td><span class="blank" data-answer="베이컨" data-id="c-b9" data-hint="근대 경험론의 선구자, 아는 것이 힘이다"></span>, 데카르트, 칸트</td>
+                  <td><span class="blank" data-answer="레오폴드" data-id="c-b10" data-hint="생태 공동체 윤리인 대지 윤리 주장"></span>, 네스</td>
+                </tr>
+                <tr>
+                  <td class="td-label">긍정적 의의</td>
+                  <td>
+                    <span class="blank" data-answer="물질" data-id="c-b5" data-hint="풍요롭고 편리한 과학기술 문명"></span> 문명 건설 및 인간 삶의 질 향상
+                  </td>
+                  <td>
+                    생태계 전체에 대한 관심 환기 및 생태계 <span class="blank" data-answer="보존" data-id="c-b6" data-hint="자연을 파괴하지 않고 본래대로 보호하고 지탱하는"></span> 의무 일깨움
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-label">주요 한계점</td>
+                  <td class="td-preset">자원의 지나친 착취로 인한 환경 파괴 및 생태적 환경 위기 초래</td>
+                  <td>
+                    모든 개발의 전면 중단 요구 등 비현실적 주장 및 <span class="blank" data-answer="생태" data-id="c-b4" data-hint="전체를 위해 부분을 희생하는 ( ) 파시즘"></span> 파시즘의 위험성 (개인의 희생 강요)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3. 동물 중심주의와 생명 중심주의 -->
+        <div class="dashboard-card card-full" style="margin-top: 1.5rem;">
+          <h3 class="block-title">☘️ 동물 중심주의와 생명 중심주의 <span class="badge warning">참고</span></h3>
+          <div class="concept-desc-box" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background: rgba(255, 255, 255, 0.65);">
+            <div>
+              <h4 style="font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;">🐾 동물 중심주의</h4>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
+                도덕적 고려의 범위를 인간을 넘어 <span class="blank" data-answer="동물" data-id="c-b7" data-hint="고통을 느낄 수 있는 살아있는 피조물"></span>까지 확대하는 관점.<br>
+                • <strong>싱어 (P. Singer)</strong>: 쾌고 감수 능력을 지닌 동물도 이익 평등 고려의 원칙에 따라 도덕적으로 대우해야 함을 주장 (『동물 해방』).
+              </p>
+            </div>
+            <div>
+              <h4 style="font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;">🌱 생명 중심주의</h4>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
+                도덕적 고려의 대상을 동물뿐만 아니라 모든 <span class="blank" data-answer="생명체" data-id="c-b8" data-hint="식물을 포함하여 생명을 지닌 모든 존재"></span>로 확대하는 관점.<br>
+                • <strong>슈바이처 (A. Schweitzer)</strong>: 모든 생명은 살아가고자 하는 생명 의지를 지니고 있으므로, 생명에 대해 외경심을 가져야 함을 강조 (『나의 생애와 사상』).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 단어 바구니 -->
+        <div class="word-bank-wrapper">
+          <span class="bank-title">🏷️ 단어 바구니</span>
+          <div class="word-chips" data-tab="compare"></div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           [Tab 5: 인간과 자연의 바람직한 관계 (Relation Section)]
+           ==================================================================== -->
+      <section class="lesson-section" id="tab-relation">
+        <!-- 인쇄용 학적 헤더 -->
+        <div class="print-header">
+          <span class="print-header-title">🌿 통합사회 I-3. 인간과 자연의 바람직한 관계 활동지</span>
+          <span class="print-student-info">학년: ____ 반: ____ 번호: ____ 이름: _________</span>
+        </div>
+
+        <div class="section-slogan">
+          <h2 class="slogan-title">🤝 인간과 자연은 어떤 관계이어야 할까?</h2>
+          <p class="slogan-desc">인간 중심주의와 생태 중심주의의 조화를 통해 지속가능한 삶을 추구하는 방법을 탐색해봅시다.</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- 1. 바람직한 관계 설정 -->
+          <div class="dashboard-card card-half">
+            <h3 class="block-title">인간과 자연의 바람직한 관계 <span class="badge">개념</span></h3>
+            <div class="card-content-stack">
+              <div class="definition-item">
+                <strong class="item-label">조화와 공존</strong>
+                <p class="item-text">인간과 자연은 서로 대립하거나 한쪽을 파괴하지 않고 <span class="blank" data-answer="조화" data-id="r-b1" data-hint="대립하지 않고 서로 좋게 어울림"></span>롭게 공존해야 함.</p>
+              </div>
+              <div class="definition-item">
+                <strong class="item-label">상호 의존</strong>
+                <p class="item-text">자연 생태계의 자생력을 해치지 않고 장기적으로 모두가 함께 살아갈 수 있도록 조화로운 <span class="blank" data-answer="공존" data-id="r-b2" data-hint="함께 존재하는 관계"></span>을 이루어야 함 (예: 기적의 사과 농법).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. 공존을 위한 실천적 의식 -->
+          <div class="dashboard-card card-half">
+            <h3 class="block-title">공존을 위한 실천적 태도 <span class="badge warning">노력</span></h3>
+            <div class="card-content-stack">
+              <div class="definition-item">
+                <strong class="item-label">공동체 의식</strong>
+                <p class="item-text">인간이 자연보다 우월하다는 정복적 사고방식에서 탈피하여, 자연 공동체의 일원으로서 책임감을 가지는 <span class="blank" data-answer="생태 공동체 의식" data-id="r-b3" data-hint="생태계의 구성원으로서 지니는 책임 의식"></span>을 정립해야 함.</p>
+              </div>
+              <div class="definition-item">
+                <strong class="item-label">조화로운 삶</strong>
+                <p class="item-text">미래 세대의 생존과 동식물을 포함한 생태계 전체의 보전까지 함께 고려하는 <span class="blank" data-answer="자연 친화적" data-id="r-b4" data-hint="자연을 사랑하고 해치지 않는"></span>인 삶의 태도가 요구됨.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 공생을 위한 정책 및 제도 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">공생을 위한 실천 사례 <span class="badge danger">실천</span></h3>
+            <div class="cards-sub-row">
+              <div class="challenge-subcard">
+                <span class="subcard-num">01</span>
+                <h4>[ <span class="blank" data-answer="지속가능한 개발" data-id="r-b5" data-hint="생태계를 파괴하지 않고 유지하면서 나아가는 개발"></span> ]</h4>
+                <p>인간의 복지와 경제 활동을 유지하되, 생태계 보전과 조화를 이루어 미래 세대의 삶을 파괴하지 않는 개발과 보존의 노력.</p>
+              </div>
+              <div class="challenge-subcard">
+                <span class="subcard-num">02</span>
+                <h4>[ <span class="blank" data-answer="생태 도시" data-id="r-b6" data-hint="자연과 어우러져 친환경 에너지를 주로 쓰는 도시"></span> ]</h4>
+                <p>개발 과정에서 자연 파괴를 최소화하는 도시 형태.<br>
+                • <strong>브라질 쿠리치바</strong>: 대중교통 중심 개편, 녹색 교환 제도<br>
+                • <strong>독일 프라이부르크</strong>: 재생 에너지 적극 활용, 친환경 보행 교통 체계</p>
+              </div>
+              <div class="challenge-subcard">
+                <span class="subcard-num">03</span>
+                <h4>[ <span class="blank" data-answer="슬로 시티" data-id="r-b7" data-hint="원래 자연과 문화를 살리며 지역민이 주도하는 경제 운동"></span> ]</h4>
+                <p>지역이 원래 가지고 있던 자연환경과 고유한 문화를 지키면서, 지역 주민이 주체가 되는 지역 문화 및 지역 경제 살리기 운동.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3.5. 동양의 전통 자연관 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">☯️ 동양의 전통 자연관 <span class="badge eco">참고</span></h3>
+            <div class="concept-desc-box" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; background: rgba(255, 255, 255, 0.6); font-size: 0.95rem; line-height: 1.6;">
+              <div>
+                <h4 style="font-weight: 800; color: var(--accent); margin-bottom: 0.4rem;">📜 유교 (Confucianism)</h4>
+                <p style="color: #334155;">
+                  하늘의 도를 본받아 만물의 본래적 가치를 존중하며, 인간과 자연이 조화를 이루는 <span class="blank" data-answer="천인합일" data-id="r-b9" data-hint="하늘(자연)과 인간이 하나로 조화를 이룸"></span>의 경지를 지향하고, 사랑의 정신인 <span class="blank" data-answer="인" data-id="r-b10" data-hint="다른 사람과 만물을 사랑하고 어질게 행동함"></span>을 모든 존재에 베풀고자 함.
+                </p>
+              </div>
+              <div>
+                <h4 style="font-weight: 800; color: var(--accent); margin-bottom: 0.4rem;">☸️ 불교 (Buddhism)</h4>
+                <p style="color: #334155;">
+                  우주 만물이 독립적으로 존재하는 것이 아니라 서로 밀접하게 원인과 조건으로 연결되어 있다는 <span class="blank" data-answer="연기설" data-id="r-b11" data-hint="모든 현상은 원인과 조건에 의해 생겨남"></span>에 기초함. 만물의 상호 의존성을 깨달아 모든 생명에 <span class="blank" data-answer="자비" data-id="r-b12" data-hint="모든 생명을 불쌍히 여기고 사랑을 베풂"></span>를 베풀 것을 강조함.
+                </p>
+              </div>
+              <div>
+                <h4 style="font-weight: 800; color: var(--accent); margin-bottom: 0.4rem;">☯️ 도가 (Taoism)</h4>
+                <p style="color: #334155;">
+                  인위적인 가식이나 욕구에서 벗어나 자연 그대로의 상태를 따르는 <span class="blank" data-answer="무위자연" data-id="r-b13" data-hint="인위적인 행위 없이 스스로 그러함"></span>을 추구함. 인간은 자연의 일부이므로 자연의 섭리에 순응하고 조화를 이루어야 한다고 봄.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. 더 알아보기: 풍수 사상 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">☘️ 더 알아보기: 인간과 자연의 조화를 강조하는 전통 풍수 사상</h3>
+            <div class="concept-desc-box">
+              <p>풍수 사상은 우리 조상들이 주거지와 묘지 등 생활 터전의 위치를 정할 때 활용했던 전통적 지리 사상입니다. 현대적 의미에서 풍수 사상은 단순히 개인의 복을 빌기 위한 술수가 아니라, <strong>자연을 살아 있는 하나의 <span class="blank" data-answer="유기체" data-id="r-b8" data-hint="생명력을 지닌 생물체처럼 긴밀히 연결된 체계"></span>로 보고, 개발에 취약한 자연환경을 보호하고 관리하고자 했던 조상들의 전통적 환경 사상</strong>으로 재평가될 수 있습니다.</p>
+            </div>
+          </div>
+
+          <!-- 관련 뉴스 탐구 -->
+          <div class="dashboard-card card-full">
+            <h3 class="block-title">📰 관련 뉴스 탐구</h3>
+            <div class="concept-desc-box" style="background: rgba(255, 255, 255, 0.65); border-left: 5px solid var(--accent); padding: 1.2rem;">
+              <h4 style="font-weight: 800; font-size: 1.1rem; margin-bottom: 0.6rem;">
+                <a href="https://www.hani.co.kr/arti/animalpeople/wild_animal/1253196.html" target="_blank" class="news-link">
+                  담비·삵 오가는 안전한 길 열리자 오대산 로드킬 87% 급감 🔗
+                </a>
+              </h4>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin: 0;">
+                국립공원 내에 야생동물의 이동 경로를 이어주는 생태통로(터널형·육교형)를 구축하여, 로드킬(찻길 사고)을 비약적으로 줄이고 생태계의 단절을 보완한 실제 상생 사례입니다. 인간 편의적 도로 개발과 자연 생태계 보전이 서로 대립하지 않고, 기술과 투자를 통해 <strong>조화와 공존(바람직한 관계)</strong>을 직접 이끌어낼 수 있음을 보여주는 대표적인 실천 모델입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 단어 바구니 -->
+        <div class="word-bank-wrapper">
+          <span class="bank-title">🏷️ 단어 바구니</span>
+          <div class="word-chips" data-tab="relation"></div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           [Tab 6: 나의 생각 정리 (Discussion Section)]
+           ==================================================================== -->
+      <section class="lesson-section" id="tab-essay">
+        <!-- 인쇄용 학적 헤더 -->
+        <div class="print-header">
+          <span class="print-header-title">🌿 통합사회 I-3. 종합 수행 에세이 및 성과 확인</span>
+          <span class="print-student-info">학년: ____ 반: ____ 번호: ____ 이름: _________</span>
+        </div>
+
+        <div class="section-slogan">
+          <h2 class="slogan-title">✍️ Today's Mission: 나의 생각 정리하기</h2>
+        </div>
+
+        <div class="essay-dashboard">
+          <div class="discussion-box-card">
+            <div class="q-header">
+              <span class="q-badge">Q1</span>
+              <h4>기후 변화를 해결하기 위해 지금 우리 학교나 가정에서 실천할 수 있는 생태 중심적 행동은 무엇이 있을까?</h4>
+            </div>
+            <div class="essay-textarea-wrapper">
+              <textarea id="essayInput1" placeholder="학교 급식 잔반 줄이기, 가정 내 친환경 에너지 사용 등 구체적인 실천 방안을 서술해보세요..."></textarea>
+            </div>
+          </div>
+
+          <div class="discussion-box-card">
+            <div class="q-header">
+              <span class="q-badge">Q2</span>
+              <h4>생태 중심주의가 지나치게 강조될 때 발생할 수 있는 문제점인 '생태 파시즘'은 무엇을 의미하는지 적어봅시다.</h4>
+            </div>
+            <div class="essay-textarea-wrapper">
+              <textarea id="essayInput2" placeholder="환경 보호라는 전체의 목적을 달성하기 위해 개별 인간이나 인간 사회의 고유 권리와 생명을 무시하고 강제로 희생시키는 현상을 적어보세요..."></textarea>
+            </div>
+          </div>
+
+          <!-- 자가 진단 체크리스트 -->
+          <div class="discussion-box-card">
+            <h3 class="block-title">스스로 배움 확인하기 <span class="badge">자가 진단</span></h3>
+            <div class="checklist-container">
+              <label class="checklist-item">
+                <input type="checkbox" class="check-box">
+                <span class="checklist-text">인간 중심주의와 생태 중심주의의 세계관, 가치 평가, 도덕적 고려 범위 차이를 비교하여 명확하게 설명할 수 있다.</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="check-box">
+                <span class="checklist-text">생태 중심주의(레오폴드, 네스)의 전일론적 특성과 이로 인해 발생할 수 있는 '생태 파시즘'의 우려점을 인지하고 비판할 수 있다.</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="check-box">
+                <span class="checklist-text">기후 변화와 지구 환경 위기에 맞서 내가 일상에서 실천할 수 있는 구체적인 환경 행동 수칙을 스스로 수립하였다.</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           [Tab 6: 실전 문제 (Quiz Section)]
+           ==================================================================== -->
+      <section class="lesson-section" id="tab-quiz">
+        <!-- 인쇄용 학적 헤더 -->
+        <div class="print-header">
+          <span class="print-header-title">🌿 통합사회 I-3. 실전 문제 평가 활동지</span>
+          <span class="print-student-info">학년: ____ 반: ____ 번호: ____ 이름: _________</span>
+        </div>
+
+        <!-- 진행 상황 표시바 -->
+        <div class="status-card" id="statusBar">
+          <div class="status-row">
+            <div class="progress-info">학습 평가 진척도: <span id="quizProgressText">1 / 10</span></div>
+            <div class="score-badge">🎯 정답: <span id="quizCorrectScore" style="font-family: 'Outfit', sans-serif;">0</span>개</div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="quizProgressBarFill" style="width: 10%;"></div>
+          </div>
+          <div class="indicator-chips" id="quizIndicatorChips">
+            <div class="indicator-chip active" data-q="0">1</div>
+            <div class="indicator-chip" data-q="1">2</div>
+            <div class="indicator-chip" data-q="2">3</div>
+            <div class="indicator-chip" data-q="3">4</div>
+            <div class="indicator-chip" data-q="4">5</div>
+            <div class="indicator-chip" data-q="5">6</div>
+            <div class="indicator-chip" data-q="6">7</div>
+            <div class="indicator-chip" data-q="7">8</div>
+            <div class="indicator-chip" data-q="8">9</div>
+            <div class="indicator-chip" data-q="9">10</div>
+          </div>
+        </div>
+
+        <!-- 퀴즈 문항 영역 -->
+        <div class="quiz-container" id="quizContainer">
+
+          <!-- ================= 문항 1. Leopold ================= -->
+          <div class="question-card active" id="qCard0" data-q-id="q1">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 보기) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q1</span>다음을 주장한 사상가의 입장에 대한 옳은 설명만을 &lt;보기&gt;에서 고른 것은?
+                </h2>
+                <div class="quiz-passage">
+                  "바람직한 대지 이용을 오직 경제적 문제로만 생각하지 말고 윤리적·심미적으로 무엇이 옳은가의 관점에서도 검토하라. 생명 공동체의 온전함, 안정성과 아름다움의 보존에 이바지한다면, 그것은 옳다. 그렇지 않다면 그르다."
+                </div>
+                <div class="box-outline">
+                  <div class="box-outline-title">&lt; 보기 &gt;</div>
+                  <p>ㄱ. 인간만이 본래적 가치를 가진 존재라고 본다.</p>
+                  <p>ㄴ. 인간과 자연을 전일론적 관점에서 바라본다.</p>
+                  <p>ㄷ. 인간과 생태계는 상호 존중해야 한다고 본다.</p>
+                  <p>ㄹ. 인간과 자연은 모두 존속할 권리를 가진다고 본다.</p>
+                </div>
+              </div>
+              <!-- 우측 패널 (선택지) -->
+              <div class="panel-box">
+                <ul class="options-list">
+                  <li class="option-item" data-idx="0"><span class="option-num">①</span><span class="option-text">ㄱ, ㄴ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="1"><span class="option-num">②</span><span class="option-text">ㄱ, ㄷ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="2"><span class="option-num">③</span><span class="option-text">ㄴ, ㄷ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="3" data-correct="true"><span class="option-num">④</span><span class="option-text">ㄴ, ㄹ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="4"><span class="option-num">⑤</span><span class="option-text">ㄷ, ㄹ</span><span class="feedback-icon"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= 문항 2. Aristotle ================= -->
+          <div class="question-card" id="qCard1" data-q-id="q2">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 보기) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q2</span>다음을 주장한 사상가의 입장으로 옳은 것은?
+                </h2>
+                <div class="quiz-passage">
+                  "인간과 마찬가지로 산다는 것은 식물에도 공통적인 것이고, 영양 섭취와 성장의 삶은 동물에게도 공통적이다. 오직 영혼의 이성적 부분의 활동만이 인간에게 유일한 활동적 삶이다."
+                </div>
+              </div>
+              <!-- 우측 패널 (선택지) -->
+              <div class="panel-box">
+                <ul class="options-list">
+                  <li class="option-item" data-idx="0" data-correct="true"><span class="option-num">①</span><span class="option-text">인간만이 직접적인 도덕적 고려 대상이다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="1"><span class="option-num">②</span><span class="option-text">인간과 동물, 식물은 공유하는 특성이 없다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="2"><span class="option-num">③</span><span class="option-text">인간의 이익을 위해 동물을 이용할 수 없다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="3"><span class="option-num">④</span><span class="option-text">인간은 식물과 동등한 도덕적 지위를 갖는다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="4"><span class="option-num">⑤</span><span class="option-text">인간과 자연의 상호 의존성을 중시해야 한다.</span><span class="feedback-icon"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= 문항 3. A vs B Table ================= -->
+          <div class="question-card" id="qCard2" data-q-id="q3">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 보기) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q3</span>A, B의 입장 모두가 질문에 옳게 대답한 것은? (단, A는 인간 중심주의, B는 생태 중심주의임)
+                </h2>
+                <div class="quiz-passage-table-container">
+                  <table class="quiz-passage-table">
+                    <thead>
+                      <tr>
+                        <th rowspan="2"></th>
+                        <th rowspan="2" style="width: 60%;">질문</th>
+                        <th colspan="2" style="width: 30%;">대답</th>
+                      </tr>
+                      <tr>
+                        <th>A<br>(인간 중심주의)</th>
+                        <th>B<br>(생태 중심주의)</th>
+                      </tr>
+                    <tbody>
+                      <tr>
+                        <td>①</td>
+                        <td class="text-left">인간과 달리 자연은 직접적인 도덕적 고려의 대상인가?</td>
+                        <td>아니요</td>
+                        <td>예</td>
+                      </tr>
+                      <tr>
+                        <td>②</td>
+                        <td class="text-left">인간 이외의 존재는 모두 인간의 목적을 위한 수단인가?</td>
+                        <td>아니요</td>
+                        <td>예</td>
+                      </tr>
+                      <tr>
+                        <td>③</td>
+                        <td class="text-left">인간을 위해 자연을 이용하는 것은 정당화될 수 있는가?</td>
+                        <td>아니요</td>
+                        <td>아니요</td>
+                      </tr>
+                      <tr>
+                        <td>④</td>
+                        <td class="text-left">인간은 다른 존재와 마찬가지로 자연의 평범한 구성원인가?</td>
+                        <td>아니요</td>
+                        <td>예</td>
+                      </tr>
+                      <tr>
+                        <td>⑤</td>
+                        <td class="text-left">인간은 자연과 함께 조화와 균형을 유지하며 살아야 하는가?</td>
+                        <td>예</td>
+                        <td>예</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- 우측 패널 (선택지) -->
+              <div class="panel-box">
+                <ul class="options-list">
+                  <li class="option-item" data-idx="0"><span class="option-num">①</span><span class="option-text">①번</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="1"><span class="option-num">②</span><span class="option-text">②번</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="2"><span class="option-num">③</span><span class="option-text">③번</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="3" data-correct="true"><span class="option-num">④</span><span class="option-text">④번</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="4"><span class="option-num">⑤</span><span class="option-text">⑤번</span><span class="feedback-icon"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= 문항 4. Kant Speech Bubble ================= -->
+          <div class="question-card" id="qCard3" data-q-id="q4">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 보기) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q4</span>그림의 강연자의 입장으로 적절한 것만을 &lt;보기&gt;에서 고른 것은?
+                </h2>
+                <div class="quiz-passage-thinker-item">
+                  <img src="images/kant.png" alt="임마누엘 칸트" class="thinker-avatar-img">
+                  <div class="thinker-speech-bubble">
+                    "순수한 이성에 의해 판단하면 인간은 통상 순전히 인간에 대한 의무 외에 다른 의무는 갖지 않습니다. 왜냐하면 어떤 주체에 대한 의무는 이 주체의 지혜에 의한 도덕적 강요이기 때문입니다. 그러므로 의무를 부과하는 주체는 첫째로 인격이어야만 하고, 둘째로 경험의 대상이어야 합니다. 이는 오직 실존하는 두 존재자 상호 간의 관계에서만 일어날 수 있습니다."
+                  </div>
+                </div>
+                <div class="box-outline">
+                  <div class="box-outline-title">&lt; 보기 &gt;</div>
+                  <p>ㄱ. 비이성적 존재를 목적으로 대우해야 한다.</p>
+                  <p>ㄴ. 자연 파괴는 인간에 대한 의무에 위배된다.</p>
+                  <p>ㄷ. 인간 이외의 존재는 어떠한 가치도 갖지 않는다.</p>
+                  <p>ㄹ. 그 자체로서 가치를 지닌 존재는 도덕적 고려 대상이다.</p>
+                </div>
+              </div>
+              <!-- 우측 패널 (선택지) -->
+              <div class="panel-box">
+                <ul class="options-list">
+                  <li class="option-item" data-idx="0"><span class="option-num">①</span><span class="option-text">ㄱ, ㄴ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="1"><span class="option-num">②</span><span class="option-text">ㄱ, ㄷ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="2"><span class="option-num">③</span><span class="option-text">ㄴ, ㄷ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="3" data-correct="true"><span class="option-num">④</span><span class="option-text">ㄴ, ㄹ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="4"><span class="option-num">⑤</span><span class="option-text">ㄷ, ㄹ</span><span class="feedback-icon"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= 문항 5. 심해 채굴 ================= -->
+          <div class="question-card" id="qCard4" data-q-id="q5">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 지문) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q5</span>갑의 입장에서 &lt;문제 상황&gt; 속 A국에 제시할 조언으로 가장 적절한 것은?
+                </h2>
+                <div class="quiz-passage">
+                  <strong>갑:</strong> 자연은 인간의 삶을 윤택하게 하는 도구가 아니다. 인간과 자연은 끊임없이 영향을 주고받기 때문에 조화와 균형을 이루어야 한다. 인간의 중요한 의무는 생태계의 안정을 유지하고 자연 그 자체의 가치를 존중하는 것이다.
+                </div>
+                <div class="box-outline">
+                  <div class="box-outline-title">&lt; 문제 상황 &gt;</div>
+                  <p>A국은 심해 채굴의 허용 여부를 결정하는 국제회의에 참석할 예정이다. A국은 전기 자동차나 스마트폰 배터리 제조에 필요한 핵심 광물을 얻기 위해 심해 채굴을 찬성해야 할지, 해양 생태계 훼손을 막기 위해 반대해야 할지 고민하고 있다.</p>
+                </div>
+              </div>
+              <!-- 우측 패널 (선택지) -->
+              <div class="panel-box">
+                <ul class="options-list">
+                  <li class="option-item" data-idx="0"><span class="option-num">①</span><span class="option-text">인간은 해양 생태계와 분리된 존재임을 기억하세요.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="1"><span class="option-num">②</span><span class="option-text">심해 채굴로 인해 발생할 경제적 효용만을 고려하세요.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="2"><span class="option-num">③</span><span class="option-text">해양 생태계의 본래적 가치보다 도구적 가치를 중시하세요.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="3"><span class="option-num">④</span><span class="option-text">심해 채굴로 인해 해양 생태계에 미칠 부작용은 무시하세요.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="4" data-correct="true"><span class="option-num">⑤</span><span class="option-text">인간은 해양 생태계를 보전할 도덕적 의무가 있음을 명심하세요.</span><span class="feedback-icon"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= 문항 6. 케이블카 토론 ================= -->
+          <div class="question-card" id="qCard5" data-q-id="q6">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 지문) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q6</span>갑, 을의 입장에 대한 설명으로 옳지 않은 것은?
+                </h2>
+                <div class="box-outline">
+                  <div class="box-outline-title">[ △△산 케이블카 설치에 대한 토론 ]</div>
+                  <p><strong>갑:</strong> 자연은 그 자체로 가치를 지니기 때문에 인간은 자연을 파괴할 권리가 없습니다. △△산 케이블카 설치로 인해 경제적 이익은 얻을 수 있을 것입니다. 그러나 장기적인 관점에서 보면 관광객의 증가로 멸종 위기 야생 생물의 서식지가 훼손될 것이 분명합니다.</p>
+                  <p><strong>을:</strong> △△산 케이블카 설치로 인해 자연환경 훼손의 우려가 있다는 것은 인정합니다. 하지만 장기적으로 보면 관광객의 증가로 고용 창출 및 지역 경제 활성화에 큰 도움이 될 것입니다. 무엇보다 자연은 인간을 위해 사용될 때 존재 가치가 있습니다.</p>
+                </div>
+              </div>
+              <!-- 우측 패널 (선택지) -->
+              <div class="panel-box">
+                <ul class="options-list">
+                  <li class="option-item" data-idx="0"><span class="option-num">①</span><span class="option-text">갑은 케이블카 설치로 경제적 이익은 얻을 수 있다고 본다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="1" data-correct="true"><span class="option-num">②</span><span class="option-text">갑은 자연이 인간만을 위해서만 존재하므로 인간은 자연을 개발할 권리가 있다고 본다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="2"><span class="option-num">③</span><span class="option-text">을은 인간 중심주의의 입장에서 자연의 가치를 판단하고 있다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="3"><span class="option-num">④</span><span class="option-text">을은 인간의 경제적 이익을 실현하기 위해서 자연환경을 이용할 수 있다고 본다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="4"><span class="option-num">⑤</span><span class="option-text">갑과 을은 모두 케이블카 설치로 자연환경이 훼손될 우려가 있다고 본다.</span><span class="feedback-icon"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= 문항 7. 체크리스트 진술 매칭 ================= -->
+          <div class="question-card" id="qCard6" data-q-id="q7">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 표) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q7</span>다음 글의 관점에 부합하는 진술에만 모두 '✓'를 표시한 학생은?
+                </h2>
+                <div class="quiz-passage">
+                  자연을 인간의 이익을 위한 대상으로만 평가해서는 안 되며, 생태계 내의 모든 존재는 그 자체로 존중받아야 한다. 인간과 자연은 공존하는 관계에 있으므로 생태계를 도덕적으로 대우해야 한다.
+                </div>
+                <div class="quiz-passage-table-container">
+                  <table class="quiz-passage-table">
+                    <thead>
+                      <tr>
+                        <th rowspan="2" style="width: 50%;">진술</th>
+                        <th colspan="5" style="width: 50%;">학생</th>
+                      </tr>
+                      <tr>
+                        <th>갑</th>
+                        <th>을</th>
+                        <th>병</th>
+                        <th>정</th>
+                        <th>무</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-left">생태계 전체는 하나의 유기체이다.</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td></td>
+                        <td>✓</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-left">인간과 자연은 동등하지 않으며 위계 관계에 있다.</td>
+                        <td>✓</td>
+                        <td></td>
+                        <td></td>
+                        <td>✓</td>
+                        <td>✓</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left">인간은 자연과 조화를 이루며 더불어 살아가는 존재이다.</td>
+                        <td></td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td></td>
+                        <td>✓</td>
+                      </tr>
+                      <tr>
+                        <td class="text-left">자연은 있는 그대로가 아닌 인간을 위한 도구적 가치만을 지닌다.</td>
+                        <td></td>
+                        <td></td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- 우측 패널 (선택지) -->
+              <div class="panel-box">
+                <ul class="options-list">
+                  <li class="option-item" data-idx="0"><span class="option-num">①</span><span class="option-text">갑</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="1" data-correct="true"><span class="option-num">②</span><span class="option-text">을</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="2"><span class="option-num">③</span><span class="option-text">병</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="3"><span class="option-num">④</span><span class="option-text">정</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="4"><span class="option-num">⑤</span><span class="option-text">무</span><span class="feedback-icon"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= 문항 8. 가상 대화 ================= -->
+          <div class="question-card" id="qCard7" data-q-id="q8">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 지문) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q8</span>다음은 갑, 을의 가상 대화이다. 갑, 을의 입장으로 가장 적절한 것은? (단, 갑, 을의 입장은 각각 인간 중심주의, 생태 중심주의 중 하나이다.)
+                </h2>
+                <div class="quiz-dialog-container">
+                  <div class="dialog-char char-left">
+                    <div class="char-avatar-box">
+                      <img src="images/leopold.png" alt="갑" class="dialog-avatar">
+                      <span class="char-tag label-eco">갑</span>
+                    </div>
+                    <div class="dialog-bubble bubble-left">
+                      "대지 윤리는 인간을 대지 공동체의 정복자에서 그 구성원으로 변화시키는 것입니다. 공동체의 구성원은 전체 공동체에 대해 존중심을 가져야 합니다."
+                    </div>
+                  </div>
+                  
+                  <div class="dialog-char char-right">
+                    <div class="dialog-bubble bubble-right">
+                      "과학의 목적은 자연을 인간의 의도에 맞도록 변형함으로써 인간의 활동 영역을 넓히는 것입니다. 자연이 인간에게 이롭도록 지식을 활용해야 합니다."
+                    </div>
+                    <div class="char-avatar-box">
+                      <img src="images/bacon.png" alt="을" class="dialog-avatar">
+                      <span class="char-tag label-human">을</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 우측 패널 (선택지) -->
+              <div class="panel-box">
+                <ul class="options-list">
+                  <li class="option-item" data-idx="0" data-correct="true"><span class="option-num">①</span><span class="option-text">갑: 생태계 전체를 도덕적으로 고려해야 한다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="1"><span class="option-num">②</span><span class="option-text">갑: 이분법적 세계관을 통해 인간과 자연을 구분해야 한다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="2"><span class="option-num">③</span><span class="option-text">을: 인간을 포함한 자연 전체는 하나의 살아있는 유기체이다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="3"><span class="option-num">④</span><span class="option-text">을: 대지 위의 모든 존재는 생명 공동체의 평등한 구성원이다.</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="4"><span class="option-num">⑤</span><span class="option-text">갑, 을: 인간이 자연의 정복자이자 지배자가 되어야 한다.</span><span class="feedback-icon"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= 문항 9. 보기형 조언 ================= -->
+          <div class="question-card" id="qCard8" data-q-id="q9">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 지문) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q9</span>갑, 을의 입장에서 &lt;문제 상황&gt; 속 A에게 제시할 적절한 조언만을 &lt;보기&gt;에서 고른 것은?
+                </h2>
+                <div class="quiz-passage-split">
+                  <div class="passage-block">
+                    <strong>갑:</strong> 인간은 자연과 구별되는 우월한 존재로, 자신의 이익과 행복 증진을 위해 자연을 수단으로 이용할 수 있다. 따라서 자연의 가치는 인간의 필요에 따라 평가되어야 한다.
+                  </div>
+                  <div class="passage-block">
+                    <strong>을:</strong> 인간은 자연으로부터 독립된 존재가 아니라 자연의 한 구성원이며, 자연 안의 모든 것은 평등하다. 따라서 인간은 자연 그 자체의 가치를 존중해야 한다.
+                  </div>
+                </div>
+                <div class="box-outline">
+                  <div class="box-outline-title">&lt; 문제 상황 &gt;</div>
+                  <p>○○군 군수인 A는 관광객 유치를 위해 ○○군 내 위치한 △△산에 케이블카를 설치하자는 지역 주민들의 요구와 환경보호를 위해 케이블카 설치를 반대하는 시민 단체의 주장 사이에서 어느 쪽의 의견을 수용할지 고민하고 있다.</p>
+                </div>
+                <div class="box-outline">
+                  <div class="box-outline-title">&lt; 보기 &gt;</div>
+                  <p>ㄱ. 갑: 자연의 도구적 가치보다 본래적 가치를 중시하세요.</p>
+                  <p>ㄴ. 갑: 케이블카 설치로 기대되는 경제적 이득을 따져보세요.</p>
+                  <p>ㄷ. 을: 인간은 자연을 지배할 수 있는 권리가 있음을 명심하세요.</p>
+                  <p>ㄹ. 을: 케이블카 설치가 생태계에 미칠 부정적 영향을 고려하세요.</p>
+                </div>
+              </div>
+              <!-- 우측 패널 (선택지) -->
+              <div class="panel-box">
+                <ul class="options-list">
+                  <li class="option-item" data-idx="0"><span class="option-num">①</span><span class="option-text">ㄱ, ㄴ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="1"><span class="option-num">②</span><span class="option-text">ㄱ, ㄷ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="2"><span class="option-num">③</span><span class="option-text">ㄴ, ㄷ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="3" data-correct="true"><span class="option-num">④</span><span class="option-text">ㄴ, ㄹ</span><span class="feedback-icon"></span></li>
+                  <li class="option-item" data-idx="4"><span class="option-num">⑤</span><span class="option-text">ㄷ, ㄹ</span><span class="feedback-icon"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= 문항 10. 서술형 문제 ================= -->
+          <div class="question-card" id="qCard9" data-q-id="q10">
+            <div class="card-grid">
+              <!-- 좌측 패널 (문제 및 지문) -->
+              <div class="panel-box">
+                <h2 class="question-title">
+                  <span class="q-badge">Q10</span>인간 중심주의 입장에 대해 생태 중심주의 입장에서 제기할 수 있는 비판을 서술하시오.
+                </h2>
+                <div class="quiz-passage" style="margin-bottom: 0.5rem;">
+                  <strong>[답안 작성 안내]</strong><br>
+                  인간 중심주의를 과도하게 적용했을 때 나타날 수 있는 기후변화, 자원고갈 등 환경 위기의 한계점 측면에서 한 문장으로 서술해 보세요.
+                </div>
+              </div>
+              <!-- 우측 패널 (서술형 입력 상자) -->
+              <div class="panel-box">
+                <strong class="item-label">✍️ 답안 입력</strong>
+                <div class="essay-textarea-wrapper" style="width: 100%;">
+                  <textarea id="quizEssayInput" placeholder="이곳에 답안을 서술하세요..." style="width: 100%; height: 120px; resize: none;"></textarea>
+                </div>
+                <div style="display: flex; justify-content: flex-end; width: 100%;">
+                  <button class="next-btn" id="quizEssaySubmitBtn" style="padding: 0.7rem 1.8rem; font-size: 1.05rem;">답안 제출 및 해설 확인 ➡️</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 상세 해설 카드 영역 (보기 선택 시 오픈) -->
+        <div class="explanation-card" id="explanationCard">
+          <h2 class="exp-title">🔑 해설 및 정답 피드백</h2>
+          
+          <div class="exp-content">
+            <h3>💡 문항 해설</h3>
+            <p id="explanationText">이곳에 문제의 상세 해설이 출력됩니다.</p>
+          </div>
+
+          <div class="exp-wrong-avoid">
+            <h3>🚫 오답 피하기</h3>
+            <ul id="wrongAvoidList">
+              <li>오답 보기에 대한 설명이 이곳에 출력됩니다.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 하단 제어부 (다음 문제 버튼) -->
+        <div class="control-actions" id="controlActions" style="display: none;">
+          <button class="next-btn" id="nextBtn">다음 문제 풀기 ➡️</button>
+        </div>
+
+        <!-- ================= 최종 결과 페이지 ================= -->
+        <div class="results-card" id="resultsCard">
+          <h2 class="results-title">🏆 학습 평가 결과</h2>
+          
+          <!-- 원형 점수 차트 -->
+          <div class="circle-chart-container">
+            <svg class="circle-chart-svg" viewBox="0 0 120 120">
+              <circle class="circle-chart-bg" cx="60" cy="60" r="50"></circle>
+              <circle class="circle-chart-fill" id="circleChartFill" cx="60" cy="60" r="50" stroke-dasharray="0 314.16"></circle>
+            </svg>
+            <div class="circle-chart-text">
+              <span class="circle-score" id="circleScore">0</span>
+              <span class="circle-max">10점 만점</span>
+            </div>
+          </div>
+
+          <p class="results-comment" id="resultsComment">인간 중심주의와 생태 중심주의 퀴즈를 모두 완료했습니다!</p>
+
+          <div class="results-details" id="resultsDetails">
+            <!-- 퀴즈 디테일 아이템 동적 생성 -->
+          </div>
+
+          <div class="result-actions">
+            <button class="restart-btn" id="restartBtn">🔄 다시 풀기</button>
+          </div>
+        </div>
+
+    </main>
+
+    <!-- 푸터 정보 -->
+    <footer class="app-footer">
+      <p>© 2026 통합사회 인터랙티브 대시보드 활동지. 고등학교 사회과 학습 자료실.</p>
+    </footer>
+  </div>
+
+  <!-- 알림 토스트 메시지 -->
+  <div id="toast" class="toast"></div>
+
+  <!-- 철학자 상세 정보 모달 레이어 -->
+  <div id="thinkerModal" class="thinker-modal">
+    <div class="thinker-modal-content">
+      <button class="thinker-modal-close" id="modalCloseBtn">&times;</button>
+      <div class="thinker-modal-body">
+        <div class="thinker-modal-header">
+          <img id="modalThinkerImg" src="" alt="" class="modal-thinker-avatar">
+          <div>
+            <h3 id="modalThinkerName">철학자 이름</h3>
+            <span id="modalThinkerTitle" class="modal-thinker-title">철학 사상 분류</span>
+          </div>
+        </div>
+        <div class="thinker-modal-info">
+          <div class="info-block">
+            <strong>📅 생애 및 시대 배경:</strong>
+            <p id="modalThinkerLife">생애 정보...</p>
+          </div>
+          <div class="info-block">
+            <strong>📖 주요 저서 및 대표 이론:</strong>
+            <p id="modalThinkerBook">도서 및 핵심 이론 정보...</p>
+          </div>
+          <div class="info-block highlighted-quote">
+            <strong>💡 대표 원문/인용구:</strong>
+            <p id="modalThinkerQuote">대표 인용구...</p>
+          </div>
+          <div class="info-block">
+            <strong>🏷️ 주요 키워드:</strong>
+            <div id="modalThinkerKeywords" class="keyword-badges">
+              <!-- 키워드 배지들 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="presentation.js"></script>
+</body>
+</html>
