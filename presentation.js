@@ -628,6 +628,17 @@ function handleModeChange(e) {
   const newsInputRelation = document.getElementById("newsInputRelation");
 
   if (isTeacher) {
+    const pw = prompt("🔑 모범답안(교사용) 모드를 활성화하려면 비밀번호를 입력해주세요:");
+    if (pw !== "인간과 자연") {
+      if (pw !== null) {
+        showToast("❌ 비밀번호가 올바르지 않습니다. 모범답안을 볼 수 없습니다.", false);
+      } else {
+        showToast("모범답안 모드 활성화가 취소되었습니다.");
+      }
+      e.target.checked = false;
+      return;
+    }
+
     body.classList.remove("mode-student");
     body.classList.add("mode-teacher");
     labelStudent.classList.remove("active");
