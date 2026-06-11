@@ -500,7 +500,7 @@ input:checked + .slider:before {
   word-break: keep-all;
 }
 
-/* 성과와 한계 대비 배경색 분기 */
+/* 의의와 한계 대비 배경색 분기 */
 .contrast-success {
   border-left: 4px solid var(--human-color);
   background: rgba(59, 130, 246, 0.03);
@@ -518,6 +518,24 @@ input:checked + .slider:before {
 .contrast-failure .item-label {
   color: var(--danger-color);
 }
+
+.info-bubble {
+  background: rgba(241, 245, 249, 0.75);
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #475569;
+  margin-top: 0.75rem;
+  word-break: keep-all;
+  display: block;
+}
+
+.info-bubble strong {
+  color: #0f172a;
+}
+
 
 /* ==========================================================================
    5. 특징 카드 요소 (3-Card Challenge)
@@ -811,6 +829,164 @@ input:checked + .slider:before {
   line-height: 1.6;
   color: #475569;
   word-break: keep-all;
+}
+
+/* 오늘 배울 내용 미션 보드 카드 */
+.intro-goals-container {
+  margin-top: 2rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 253, 250, 0.95) 100%);
+  border: 2px solid var(--accent);
+  border-radius: 24px;
+  padding: 2.2rem;
+  box-shadow: 0 10px 30px rgba(15, 118, 110, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-goals-container::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.intro-goals-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid rgba(15, 118, 110, 0.15);
+  padding-bottom: 1.2rem;
+}
+
+.intro-goals-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.intro-goals-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent) 0%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.intro-goals-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.intro-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.intro-goal-card {
+  background: white;
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+}
+
+.intro-goal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(15, 118, 110, 0.08);
+  border-color: var(--accent);
+}
+
+.intro-goal-badge {
+  align-self: flex-start;
+  padding: 0.35rem 0.9rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* 배지 색상 바리에이션 */
+.badge-human {
+  background-color: rgba(14, 116, 144, 0.08);
+  color: #0e7490;
+  border: 1px solid rgba(14, 116, 144, 0.15);
+}
+
+.badge-eco {
+  background-color: rgba(21, 128, 61, 0.08);
+  color: #15803d;
+  border: 1px solid rgba(21, 128, 61, 0.15);
+}
+
+.badge-relation {
+  background-color: rgba(180, 83, 9, 0.08);
+  color: #b45309;
+  border: 1px solid rgba(180, 83, 9, 0.15);
+}
+
+.badge-key {
+  background-color: rgba(109, 40, 217, 0.08);
+  color: #6d28d9;
+  border: 1px solid rgba(109, 40, 217, 0.15);
+}
+
+.intro-goal-card h4 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0;
+}
+
+.intro-goal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.intro-goal-list li {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #475569;
+  position: relative;
+  padding-left: 1.5rem;
+  font-weight: 600;
+}
+
+.intro-goal-list li::before {
+  content: "🎯";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 0.95rem;
+}
+
+/* 실천사례 형광펜 효과 */
+.highlight-text {
+  background: linear-gradient(120deg, rgba(253, 224, 71, 0.45) 0%, rgba(253, 224, 71, 0.15) 100%);
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: 800;
 }
 
 /* ==========================================================================

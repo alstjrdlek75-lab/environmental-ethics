@@ -26,8 +26,13 @@ const tabWordBanks = {
 };
 
 const essayModelAnswers = {
-  essay1: "학교 급식 잔반을 줄이고 분리배출을 철저히 하며, 안 쓰는 교실 소등과 에너지 절약을 생활화하는 대지 공동체적 실천을 행할 수 있습니다.",
-  essay2: "생태계 전체의 조화와 안정성(전체의 선)을 위해 인간을 포함한 개별 생명체의 생명권이나 기본 권리를 억압하고 희생시킬 수 있다는 극단적 전체주의 성향의 생태 윤리적 입장입니다."
+  essay1: "인간 중심주의는 인간을 가장 가치 있는 존재로 보며, 자연을 인간의 생존과 복지를 위한 도구로 파악합니다(도구적 자연관). 대표적으로 베이컨은 과학기술을 통한 자연 지배를 강조하였고, 데카르트는 정신과 육체를 분리하는 이분법적/기계론적 세계관을 주장했으며, 칸트는 이성적 존재인 인간에게만 직접적인 도덕적 의무가 있고 동물을 함부로 다루면 안 되는 이유는 인간의 도덕적 품성을 해치기 때문이라는 간접적 의무를 주장했습니다.",
+  essay2: "생태 중심주의는 인간을 포함한 대자연 전체가 유기적으로 연결되어 있다는 전일론적 세계관을 바탕으로, 생태계 전체를 도덕적 고려 대상으로 삼고 자연의 내재적 가치를 인정합니다. 레오폴드는 대지를 인간과 동식물이 함께하는 생명 공동체로 규정하고 공동체의 온전성, 안정성, 아름다움을 보전하는 행위가 옳다고 보았으며(대지 윤리), 네스는 인간 중심적 성찰을 벗어난 큰 자아실현과 생태계적 평등을 강조하는 심층 생태학을 제창했습니다. 다만, 전체의 균형을 위해 개체의 권리를 과도하게 침해할 경우 '환경 파시즘'으로 흐를 수 있다는 한계가 있습니다.",
+  essay3: "동물 중심주의는 도덕적 고려의 대상을 쾌고 감수 능력을 지닌 동물까지 확장하는 입장으로, 싱어는 공리주의에 기반하여 동물의 고통도 인간과 동등하게 고려해야 한다고 주장합니다(동물 해방). 생물(생명) 중심주의는 모든 살아 있는 생명체로 범위를 확장하며, 슈바이처는 모든 생명은 살고자 하는 의지를 가지고 있어 그 자체로 신성하다는 생명 외경 사상을 주장하였고, 테일러는 생명체를 목적론적 삶의 주체로 보고 내재적 가치를 지닌다고 보았습니다. 이들은 개별 생명체의 가치를 강조하는 개체주의적 성격을 띱니다.",
+  essay4: "인간과 자연의 조화와 공존을 위해서는 인간 중심주의의 착취적 성향과 생태 중심주의의 환경 파시즘 한계를 모두 극복하는 동반자적 인식을 필요로 합니다. 동양의 전통 사상인 유교의 천인합일(만물과의 조화), 불교의 연기설(상호 연결성과 자비), 도가의 무위자연은 이러한 자연 친화적 태도에 큰 교훈을 줍니다. 구체적인 사례로는 생물들의 이동 통로를 보존하는 '생태통로 개설', 신재생 에너지와 자연 공존을 지향하는 '생태 도시(예: 독일 프라이부르크)', 자연의 시간표에 맞춰 느린 삶을 추구하는 '슬로 시티' 조성 등이 있습니다.",
+  newsHuman: "인간 중심적 관점에서는 '돼지 빌딩'과 같은 다층식 현대화 양돈시설이 토지 이용 효율성을 극대화하고, 농가의 심각한 인력 부족 문제를 첨단 자동화 설비로 극복하며, 생산 비용을 낮춰 저렴하고 안정적인 축산물 공급을 보장하여 궁극적으로 인류의 식량 안보와 삶의 질(복지)을 향상시킨다고 옹호할 수 있습니다.",
+  newsEco: "생태 중심적 관점에서는 지리산 개발 사업이 수많은 야생 생물들의 서식지를 분절시키고 백두대간 생태축의 핵심인 산림 생태계를 훼손하여 생태계 전체의 온전성, 안정성, 아름다움을 파괴하므로 반대해야 한다고 지지합니다. 생태 중심주의는 인간의 일시적인 관광 및 경제적 이익보다 생태계 공동체 그 자체가 지닌 본래적 가치와 존속 권리를 우선시합니다.",
+  newsRelation: "조화와 공존의 관점에서는 오대산 국립공원의 생태통로 개설이 인간 편의적 도로 개발로 단절된 생명 공동체의 통로를 복원함으로써 로드킬이라는 생명 훼손을 획기적으로 줄이고 인간과 야생동물의 상생을 가능하게 하는 훌륭한 실천 사례이기 때문에 적극 옹호해야 합니다. 이는 인간의 개발 욕구와 자연 보전이 기술적 보완과 상생의 투자를 통해 조화를 이룰 수 있음을 입증합니다."
 };
 
 // --------------------------------------------------------------------------
@@ -82,13 +87,14 @@ const thinkersDb = {
 let activeTab = "intro";
 let selectedWord = null;
 let selectedChipElement = null;
+let isQuizUnlocked = false;
 
 // 해결한 빈칸 ID 목록 (로컬 스토리지 보존)
 let solvedBlanks = new Set();
 // 해결한 퀴즈 ID 목록 (로컬 스토리지 보존)
 let solvedQuizzes = new Set();
 // 에세이 주관식 데이터
-let essays = { essay1: "", essay2: "", quizEssay: "" };
+let essays = { essay1: "", essay2: "", essay3: "", essay4: "", quizEssay: "", newsHuman: "", newsEco: "", newsRelation: "" };
 
 // --------------------------------------------------------------------------
 // 3. 주요 DOM 객체 수집
@@ -168,6 +174,19 @@ function initTabNavigation() {
 }
 
 function switchTab(tabId) {
+  if (tabId === "quiz" && !isQuizUnlocked) {
+    const pw = prompt("🔑 '실전 문제' 탭에 진입하기 위해 비밀번호를 입력해주세요:");
+    if (pw === "인간과 자연") {
+      isQuizUnlocked = true;
+      showToast("비밀번호가 확인되었습니다. 실전 문제를 시작합니다! 🎯", true);
+    } else {
+      if (pw !== null) {
+        showToast("❌ 비밀번호가 올바르지 않습니다. 다시 시도해보세요.", false);
+      }
+      return; // 탭 전환 차단
+    }
+  }
+
   activeTab = tabId;
 
   // 탭 버튼 활성화 변경
@@ -480,9 +499,19 @@ function triggerSparkles(element) {
 function initEssayInputs() {
   const essayInput1 = document.getElementById("essayInput1");
   const essayInput2 = document.getElementById("essayInput2");
+  const essayInput3 = document.getElementById("essayInput3");
+  const essayInput4 = document.getElementById("essayInput4");
+  const newsInputHuman = document.getElementById("newsInputHuman");
+  const newsInputEco = document.getElementById("newsInputEco");
+  const newsInputRelation = document.getElementById("newsInputRelation");
 
   essayInput1.value = essays.essay1 || "";
   essayInput2.value = essays.essay2 || "";
+  essayInput3.value = essays.essay3 || "";
+  essayInput4.value = essays.essay4 || "";
+  if (newsInputHuman) newsInputHuman.value = essays.newsHuman || "";
+  if (newsInputEco) newsInputEco.value = essays.newsEco || "";
+  if (newsInputRelation) newsInputRelation.value = essays.newsRelation || "";
 
   essayInput1.addEventListener("input", (e) => {
     essays.essay1 = e.target.value;
@@ -493,6 +522,37 @@ function initEssayInputs() {
     essays.essay2 = e.target.value;
     saveToLocalStorage();
   });
+
+  essayInput3.addEventListener("input", (e) => {
+    essays.essay3 = e.target.value;
+    saveToLocalStorage();
+  });
+
+  essayInput4.addEventListener("input", (e) => {
+    essays.essay4 = e.target.value;
+    saveToLocalStorage();
+  });
+
+  if (newsInputHuman) {
+    newsInputHuman.addEventListener("input", (e) => {
+      essays.newsHuman = e.target.value;
+      saveToLocalStorage();
+    });
+  }
+
+  if (newsInputEco) {
+    newsInputEco.addEventListener("input", (e) => {
+      essays.newsEco = e.target.value;
+      saveToLocalStorage();
+    });
+  }
+
+  if (newsInputRelation) {
+    newsInputRelation.addEventListener("input", (e) => {
+      essays.newsRelation = e.target.value;
+      saveToLocalStorage();
+    });
+  }
 }
 
 // --------------------------------------------------------------------------
@@ -561,6 +621,11 @@ function handleModeChange(e) {
   const labelTeacher = document.querySelector(".label-teacher");
   const essayInput1 = document.getElementById("essayInput1");
   const essayInput2 = document.getElementById("essayInput2");
+  const essayInput3 = document.getElementById("essayInput3");
+  const essayInput4 = document.getElementById("essayInput4");
+  const newsInputHuman = document.getElementById("newsInputHuman");
+  const newsInputEco = document.getElementById("newsInputEco");
+  const newsInputRelation = document.getElementById("newsInputRelation");
 
   if (isTeacher) {
     body.classList.remove("mode-student");
@@ -577,8 +642,25 @@ function handleModeChange(e) {
     // 주관식 에세이 모범답안 출력 및 읽기 전용 설정
     essayInput1.value = essayModelAnswers.essay1;
     essayInput2.value = essayModelAnswers.essay2;
+    essayInput3.value = essayModelAnswers.essay3;
+    essayInput4.value = essayModelAnswers.essay4;
     essayInput1.readOnly = true;
     essayInput2.readOnly = true;
+    essayInput3.readOnly = true;
+    essayInput4.readOnly = true;
+
+    if (newsInputHuman) {
+      newsInputHuman.value = essayModelAnswers.newsHuman;
+      newsInputHuman.readOnly = true;
+    }
+    if (newsInputEco) {
+      newsInputEco.value = essayModelAnswers.newsEco;
+      newsInputEco.readOnly = true;
+    }
+    if (newsInputRelation) {
+      newsInputRelation.value = essayModelAnswers.newsRelation;
+      newsInputRelation.readOnly = true;
+    }
 
     progressBarFill.style.width = "100%";
     progressText.innerText = "100%";
@@ -608,8 +690,25 @@ function handleModeChange(e) {
     // 학생 작성본 복원 및 읽기 전용 해제
     essayInput1.value = essays.essay1 || "";
     essayInput2.value = essays.essay2 || "";
+    essayInput3.value = essays.essay3 || "";
+    essayInput4.value = essays.essay4 || "";
     essayInput1.readOnly = false;
     essayInput2.readOnly = false;
+    essayInput3.readOnly = false;
+    essayInput4.readOnly = false;
+
+    if (newsInputHuman) {
+      newsInputHuman.value = essays.newsHuman || "";
+      newsInputHuman.readOnly = false;
+    }
+    if (newsInputEco) {
+      newsInputEco.value = essays.newsEco || "";
+      newsInputEco.readOnly = false;
+    }
+    if (newsInputRelation) {
+      newsInputRelation.value = essays.newsRelation || "";
+      newsInputRelation.readOnly = false;
+    }
 
     updateProgress();
     updateWordChipsStatus(activeTab); // Rerender 대신 상태값만 변형하여 칩 셔플 방지
@@ -627,7 +726,7 @@ function handleModeChange(e) {
 function updateProgress() {
   if (body.classList.contains("mode-teacher")) return;
 
-  const percent = Math.round(((solvedBlanks.size + solvedQuizzes.size) / (totalBlanksCount + 10)) * 100) || 0;
+  const percent = Math.round(((solvedBlanks.size + solvedQuizzes.size) / (totalBlanksCount + quizQuestionsDb.length)) * 100) || 0;
   progressBarFill.style.width = `${percent}%`;
   progressText.innerText = `${percent}%`;
 }
@@ -644,10 +743,29 @@ function showToast(message, isSuccess = true) {
 
 function resetWorkbook() {
   solvedBlanks.clear();
-  essays = { essay1: "", essay2: "", quizEssay: "" };
+  essays = { essay1: "", essay2: "", essay3: "", essay4: "", quizEssay: "", newsHuman: "", newsEco: "", newsRelation: "" };
+  isQuizUnlocked = false;
 
   document.getElementById("essayInput1").value = "";
   document.getElementById("essayInput2").value = "";
+  document.getElementById("essayInput3").value = "";
+  document.getElementById("essayInput4").value = "";
+
+  const newsInputHuman = document.getElementById("newsInputHuman");
+  const newsInputEco = document.getElementById("newsInputEco");
+  const newsInputRelation = document.getElementById("newsInputRelation");
+  if (newsInputHuman) {
+    newsInputHuman.value = "";
+    newsInputHuman.readOnly = false;
+  }
+  if (newsInputEco) {
+    newsInputEco.value = "";
+    newsInputEco.readOnly = false;
+  }
+  if (newsInputRelation) {
+    newsInputRelation.value = "";
+    newsInputRelation.readOnly = false;
+  }
 
   allBlanks.forEach((blank) => {
     blank.classList.remove("revealed");
@@ -801,13 +919,42 @@ const quizQuestionsDb = [
     wrongAvoid: [
       "예시 답안: '인간 중심주의를 강조하게 되면 자원 고갈, 환경 오염, 생태계 파괴 등과 같은 환경 위기가 나타날 수 있다.'"
     ]
+  },
+  {
+    id: "q11",
+    correctIdx: 4, // index of ⑤ (0-indexed)
+    explanation: "(가)는 유교 사상이고, (나)는 불교 사상입니다. 두 사상 모두 인간과 자연의 조화, 상호 의존성을 강조합니다. 따라서 두 사상 모두 '자연과 인간을 상호 독립적인 존재로 바라보는가?'라는 질문에 대해 부정('아니요')의 대답을 하게 됩니다. 유교는 인간과 자연이 하나로 조화되는 천인합일(天人合一)을 지향하며, 불교는 만물이 연기(緣起)에 의해 긴밀히 상호 의존한다고 봅니다.",
+    wrongAvoid: [
+      "①, ③ 유교와 불교 모두 긍정('예')의 대답을 할 질문입니다.",
+      "② 유교와 불교 모두 자연의 순리에 순응하고 조화를 이루며 살 것을 강조하므로 긍정('예')의 대답을 합니다.",
+      "④ 유교(가)에서 도덕성은 하늘(天)로부터 부여받은 하늘의 도(道)에 따른 인(仁)의 실천이므로 긍정('예')의 대답을 합니다."
+    ]
+  },
+  {
+    id: "q12",
+    correctIdx: 1, // index of ② (0-indexed)
+    explanation: "밑줄 친 ㉠의 생태 관광은 자연환경을 훼손하지 않으면서 인간과 자연의 공존을 도모하는 대안적 활동입니다. 이는 자연을 인간의 이익만을 위한 도구로 보지 않고, 자연 그 자체의 가치를 존중하며 보전하는 생태 중심주의 및 공존의 자연관을 가장 잘 대변합니다.",
+    wrongAvoid: [
+      "①, ⑤ 자연보다 인간의 우월성을 주장하거나 경제적 가치만을 강조하는 것은 인간 중심주의적 관점입니다.",
+      "③, ④ 생태 관광은 개발과 보존의 조화로운 공존(양립)을 추구하며 모든 개발의 전면적 중단을 요구하지는 않습니다."
+    ]
+  },
+  {
+    id: "q13",
+    correctIdx: 4, // index of ⑤ (0-indexed)
+    explanation: "제시된 독일 프라이부르크와 브라질 쿠리치바의 사례는 친환경적이고 지속 가능한 도시 계획을 수립하여 환경을 보존하는 동시에 지역 개발을 추진한 생태 도시의 대표적 성공 사례입니다. 따라서 (가)에 들어갈 탐구 주제는 '환경 친화적인 방법으로 지역 개발을 진행하는 도시'가 가장 적절합니다.",
+    wrongAvoid: [
+      "① 물류 중심지나 ② 중화학 산업 재편은 산업 고도화 및 물량 중심 개발의 측면입니다.",
+      "③ 전통문화 보전과 느림의 삶은 '슬로 시티'에 관한 내용입니다.",
+      "④ 대규모 휴양 시설 유치는 관광 산업 중심의 지역 개발로, 친환경 보존 정책과는 거리가 있습니다."
+    ]
   }
 ];
 
 let currentQuestionIdx = 0;
 let score = 0;
-const userAnswersStatus = [null, null, null, null, null, null, null, null, null, null];
-const firstAttemptStatus = [true, true, true, true, true, true, true, true, true, true];
+const userAnswersStatus = [null, null, null, null, null, null, null, null, null, null, null, null, null];
+const firstAttemptStatus = [true, true, true, true, true, true, true, true, true, true, true, true, true];
 
 let quizProgressText, quizCorrectScore, quizProgressBarFill, quizIndicatorChips, questionCards;
 let explanationCard, explanationText, wrongAvoidList, controlActions, nextBtn;
@@ -839,7 +986,7 @@ function initQuizzes() {
   // Restore solved state
   solvedQuizzes.forEach(qId => {
     const idx = parseInt(qId.replace("q", "")) - 1;
-    if (idx >= 0 && idx < 10) {
+    if (idx >= 0 && idx < quizQuestionsDb.length) {
       userAnswersStatus[idx] = 1;
       firstAttemptStatus[idx] = true;
     }
@@ -889,7 +1036,7 @@ function initQuizzes() {
   // Bind next button
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-      if (currentQuestionIdx < 9) {
+      if (currentQuestionIdx < quizQuestionsDb.length - 1) {
         showQuestion(currentQuestionIdx + 1);
       } else {
         showFinalResults();
@@ -924,15 +1071,15 @@ function initQuizzes() {
 }
 
 function showQuestion(index) {
-  if (index < 0 || index >= 10) return;
+  if (index < 0 || index >= quizQuestionsDb.length) return;
   currentQuestionIdx = index;
 
   questionCards.forEach((card, idx) => {
     card.classList.toggle('active', idx === index);
   });
 
-  if (quizProgressText) quizProgressText.innerText = `${index + 1} / 10`;
-  if (quizProgressBarFill) quizProgressBarFill.style.width = `${((index + 1) / 10) * 100}%`;
+  if (quizProgressText) quizProgressText.innerText = `${index + 1} / ${quizQuestionsDb.length}`;
+  if (quizProgressBarFill) quizProgressBarFill.style.width = `${((index + 1) / quizQuestionsDb.length) * 100}%`;
 
   if (quizIndicatorChips) {
     quizIndicatorChips.forEach((chip, idx) => {
@@ -963,7 +1110,7 @@ function showQuestion(index) {
     revealExplanation(index);
     if (!body.classList.contains("mode-teacher")) {
       if (controlActions) controlActions.style.display = 'flex';
-      if (nextBtn) nextBtn.innerHTML = index === 9 ? '학습 평가 결과 확인 🏆' : '다음 문제 풀기 ➡️';
+      if (nextBtn) nextBtn.innerHTML = index === quizQuestionsDb.length - 1 ? '학습 평가 결과 확인 🏆' : '다음 문제 풀기 ➡️';
     }
   } else {
     if (explanationCard) explanationCard.classList.remove('active');
@@ -1003,7 +1150,7 @@ function handleOptionSelection(questionIdx, optionIdx, optionElement) {
     setTimeout(() => {
       revealExplanation(questionIdx);
       if (controlActions) controlActions.style.display = 'flex';
-      if (nextBtn) nextBtn.innerHTML = questionIdx === 9 ? '학습 평가 결과 확인 🏆' : '다음 문제 풀기 ➡️';
+      if (nextBtn) nextBtn.innerHTML = questionIdx === quizQuestionsDb.length - 1 ? '학습 평가 결과 확인 🏆' : '다음 문제 풀기 ➡️';
     }, 500);
 
     saveToLocalStorage();
@@ -1046,7 +1193,7 @@ function handleQuizEssaySubmit() {
   setTimeout(() => {
     revealExplanation(9);
     if (controlActions) controlActions.style.display = 'flex';
-    if (nextBtn) nextBtn.innerHTML = '학습 평가 결과 확인 🏆';
+    if (nextBtn) nextBtn.innerHTML = 9 === quizQuestionsDb.length - 1 ? '학습 평가 결과 확인 🏆' : '다음 문제 풀기 ➡️';
   }, 500);
 
   saveToLocalStorage();
@@ -1078,13 +1225,13 @@ function showFinalResults() {
   if (controlActions) controlActions.style.display = 'none';
 
   if (circleScore) circleScore.innerText = score;
-  const strokeVal = (score / 10) * 314.16;
+  const strokeVal = (score / quizQuestionsDb.length) * 314.16;
   if (circleChartFill) circleChartFill.setAttribute('stroke-dasharray', `${strokeVal} 314.16`);
 
   let comment = '';
-  if (score === 10) {
+  if (score === quizQuestionsDb.length) {
     comment = '👑 완벽합니다! 인간 중심주의와 생태 중심주의 특징을 완벽하게 마스터하셨습니다!';
-  } else if (score >= 7) {
+  } else if (score >= Math.round(quizQuestionsDb.length * 0.7)) {
     comment = '👍 대단합니다! 대부분의 철학적 세계관과 사상가 입장을 정확히 이해하고 계시네요.';
   } else {
     comment = '📖 조금 아쉽네요! 대시보드로 돌아가 인간 중심주의와 생태 중심주의를 다시 학습해 보아요.';
@@ -1104,7 +1251,10 @@ function showFinalResults() {
       '체크리스트 진술 매칭 (을)',
       '가상 대화 분석 (레오폴드 vs 베이컨)',
       '케이블카 설치 조언 (인간 vs 생태)',
-      '생태 중심주의의 비판 (서술형)'
+      '생태 중심주의의 비판 (서술형)',
+      '동양의 유교·불교 자연관',
+      '생태 관광의 자연관',
+      '친환경 생태 도시'
     ];
 
     quizQuestionsDb.forEach((q, idx) => {
@@ -1139,7 +1289,7 @@ function resetQuiz() {
   if (quizCorrectScore) quizCorrectScore.innerText = score;
   currentQuestionIdx = 0;
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < quizQuestionsDb.length; i++) {
     userAnswersStatus[i] = null;
     firstAttemptStatus[i] = true;
   }
